@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  humotica-core:
+    build:
+      context: ..
+      dockerfile: humotica-core/Dockerfile
+    image: humotica/core:latest
+    container_name: humotica-core
+    volumes:
+      - ./data:/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python3
+    stdin_open: true
+    tty: true
+
+  # Example: API service using humotica-core
+  api:
+    image: humotica/core:latest
+    container_name: humotica-api
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    command: python3 -m uvicorn main:app --host 0.0.0.0 --port 8080
+    profiles:
+      - api
