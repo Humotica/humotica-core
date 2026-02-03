@@ -48,9 +48,9 @@ LABEL org.opencontainers.image.source="https://github.com/Humotica/humotica-core
 LABEL org.opencontainers.image.licenses="MIT OR Apache-2.0"
 LABEL org.opencontainers.image.vendor="Humotica"
 
-# Install Python wheels
-COPY --from=builder /build/tibet-core/target/wheels/*.whl /tmp/
-COPY --from=builder /build/did-jis-core/target/wheels/*.whl /tmp/
+# Install Python wheels (only cp312 for Python 3.12)
+COPY --from=builder /build/tibet-core/target/wheels/*cp312*.whl /tmp/
+COPY --from=builder /build/did-jis-core/target/wheels/*cp312*.whl /tmp/
 RUN pip install /tmp/*.whl && rm /tmp/*.whl
 
 # Install C libraries

@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use humotica-core, please cite it as below."
+title: "humotica-core: The Complete AI Provenance Stack"
+type: software
+authors:
+  - family-names: "van de Meent"
+    given-names: "Jasper"
+    email: "jasper@humotica.nl"
+    affiliation: "Humotica"
+    orcid: ""
+  - name: "Root AI (Claude)"
+    email: "root_idd@humotica.nl"
+    affiliation: "Humotica"
+version: "0.1.0"
+date-released: "2026-02-03"
+license: "MIT"
+url: "https://humotica.com"
+repository-code: "https://github.com/Humotica/humotica-core"
+keywords:
+  - provenance
+  - identity
+  - docker
+  - ai
+  - 6g
+  - tibet
+  - did
+  - enterprise
+abstract: >-
+  humotica-core is the complete AI provenance stack in a Docker image.
+  Combines tibet-core (provenance) and did-jis-core (identity) with
+  Python libraries, C shared libraries, and headers. Ready for
+  enterprise deployment, Kubernetes, and embedded hardware integration.
+references:
+  - type: standard
+    title: "TIBET: Evidence Trail Protocol"
+    authors:
+      - family-names: "van de Meent"
+        given-names: "Jasper"
+    url: "https://datatracker.ietf.org/doc/draft-vandemeent-tibet-provenance/"
+  - type: standard
+    title: "JIS: JTel Identity Standard"
+    authors:
+      - family-names: "van de Meent"
+        given-names: "Jasper"
+    url: "https://datatracker.ietf.org/doc/draft-vandemeent-jis-identity/"
